@@ -5,7 +5,6 @@ func canCross(stones []int) bool {
 	if stones[1] != 1 {
 		return false
 	}
-
 	dp := make([][]bool, length)
 
 	for i := range dp {
@@ -24,7 +23,6 @@ func canCross(stones []int) bool {
 			}
 		}
 	}
-
 	return false
 }
 
