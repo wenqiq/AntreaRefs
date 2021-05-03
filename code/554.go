@@ -2,6 +2,7 @@ package code
 
 func leastBricks(wall [][]int) int {
 	wallDict := map[int]int{}
+
 	for _, wal := range wall {
 		tmp := 0
 		for _, w := range wal {
