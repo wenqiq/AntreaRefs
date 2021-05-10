@@ -1,4 +1,4 @@
-package node_memberlist
+package main
 
 import "github.com/wenqiq/AntreaRefs/pkg/memberlist"
 
