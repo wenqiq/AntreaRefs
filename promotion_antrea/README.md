@@ -1,9 +1,9 @@
 
 # 恭喜Antrea项目进入 CNCF Sandbox
 
-太平洋时间5月6日，经过云原生计算基金会（CNCF）技术监督委员会（TOC）投票通过， VMware开源项目Antrea正式成为沙箱级项目（Sandbox Level Project）。
+2021年4月28日，经云原生计算基金会（CNCF）技术监督委员会（TOC）投票决议， VMware开源项目Antrea正式成为CNCF沙箱级项目（Sandbox Project）。
 
-Antrea项目是一个开源的Kubernetes CNI网络插件解决方案，基于Open vSwitch（OVS）， 旨在为Kubernetes集群提供更高效、安全、跨平台的CNI和网络策略。
+Antrea项目是一个基于Open vSwitch（OVS）开源的Kubernetes CNI网络插件解决方案，旨在为Kubernetes集群提供更高效、更安全的跨平台CNI和网络策略。
 
 Antrea Github 地址：https://github.com/vmware-tanzu/antrea
 
@@ -12,7 +12,7 @@ Antrea Github 地址：https://github.com/vmware-tanzu/antrea
 ![Antrea Overview](img/antrea_overview.svg.png)
 
 
-Antrea最初于2019年11月发布，是一个基于Kubernetes原生的项目，它实现了容器网络接口（CNI）和Kubernetes NetworkPolicy，从而为Pod工作负载提供网络连接和安全性。
+Antrea最初于2019年11月发布，是一个基于Kubernetes原生的项目，它实现了Kubernetes容器网络接口（CNI）和Kubernetes NetworkPolicy，从而为Pod工作负载提供网络通信和安全策略。
 
 同时，Antrea将可编程网络的优势从Open vSwitch（OVS）扩展到Kubernetes。
 
@@ -20,11 +20,11 @@ Antrea最初于2019年11月发布，是一个基于Kubernetes原生的项目，�
 
 1.统一网络堆栈
 
-Antrea通过在Open vSwitch之上构建的统一网络堆栈，简化了跨不同云和操作系统的Kubernetes网络。
+Antrea基于Open vSwitch构建的统一网络堆栈，简化了跨不同云和操作系统的Kubernetes网络。
 
 2.易于操作
 
-Antrea的设计采用Kubernetes控制器模式，并为网络开发者或运维提供相关一些常用、高效的工具，从而简化部署、日常操作和故障定位。
+Antrea的设计采用Kubernetes控制器模式，为网络开发者或运维提供一些常用且高效的相关工具，从而简化部署、日常操作和故障定位。
 
 3.灵活性和可扩展性
 
@@ -67,7 +67,10 @@ Antrea 架构如下：
 
 ![antrea architecture](img/arch.svg.png)
 
-Antrea项目主要在Kubernetes集群3/4层提供网络服务和一些安全特性，利用Open vSwitch作为网络数据平面，Open vSwitch是一种高性能可编程虚拟交换机，是为分布式多层交换性能而优化的开源技术，同时支持Linux和Windows。基于Open vSwitch，Antrea能够以更高效的方式实施Kubernetes网络策略，并支持Linux和Windows等多平台。同时，借助Open vSwitch的“可编程”特性， Antrea能够在Open vSwitch的基础上实现广泛的网络、安全功能和服务。
+Antrea项目利用Open vSwitch作为网络数据平面，主要在Kubernetes集群3/4层提供网络服务和一些安全特性。
+Open vSwitch是一种高性能可编程虚拟交换机，是为分布式多层交换性能而优化的开源技术，同时支持Linux和Windows。
+基于Open vSwitch，Antrea能够以更高效的方式实施Kubernetes网络策略，并支持Linux和Windows等多平台。
+同时，借助Open vSwitch的“可编程”特性， Antrea能够在Open vSwitch的基础上实现广泛的网络通信、安全策略和服务。
 
 以上架构是Linux平台的Antrea Agent运行情况，Windows平台的架构可以参考项目文档的Windows部分。
 
