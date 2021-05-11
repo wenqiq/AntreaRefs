@@ -16,7 +16,7 @@ var (
 	bindPort = flag.Int("port", 8002, "gossip port")
 )
 
-func Run() {
+func Run(stopCh <-chan struct{}) {
 	flag.Parse()
 	hostname, _ := os.Hostname()
 
@@ -25,6 +25,10 @@ func Run() {
 
 	config.BindPort = *bindPort
 	config.AdvertisePort = *bindPort
+
+	nodeMember := fmt.Sprintf("127.0.0.1:%d", *bindPort)
+
+	klog.Infof("Add new node: %s", nodeMember)
 
 	klog.Infof("Configs: %+v\n", config)
 
@@ -38,7 +42,7 @@ func Run() {
 	}
 
 	// Join an existing cluster by specifying at least one known member.
-	n, err := list.Join([]string{"127.0.0.1:8002"})
+	n, err := list.Join([]string{nodeMember})
 	if err != nil {
 		panic("Failed to join cluster: " + err.Error())
 	}
@@ -52,10 +56,15 @@ func Run() {
 	// Continue doing whatever you need, memberlist will maintain membership
 	// information in the background. Delegates can be used for receiving
 	// events when members join or leave.
+	timeTicker := time.NewTicker(3 * time.Second)
 	for {
-		for _, member := range list.Members() {
-			fmt.Printf("Member: %s %s, %#v\n", member.Name, member.Addr, member.State)
+		select {
+		case <-stopCh:
+			return
+		case <-timeTicker.C:
+			for _, member := range list.Members() {
+				klog.Infof("Member: %s %s, %#v\n", member.Name, member.Addr, member.State)
+			}
 		}
-		time.Sleep(time.Second * 3)
 	}
 }
