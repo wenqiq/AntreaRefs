@@ -42,7 +42,7 @@ func Run(stopCh <-chan struct{}) {
 	}
 
 	// Join an existing cluster by specifying at least one known member.
-	n, err := list.Join([]string{nodeMember})
+	n, err := list.Join([]string{nodeMember, "127.0.0.1:9001", ""})
 	if err != nil {
 		panic("Failed to join cluster: " + err.Error())
 	}
