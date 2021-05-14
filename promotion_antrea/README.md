@@ -82,9 +82,9 @@ Antrea 的部署非常简单，部署Kubernetes集群之后，通过一键执行
 
 # 客户案例
 
-
-
-
+Glasnostic专注于Kubernetes云原生，为用户提供更具弹性的云服务运营，其提供的Kubernetes集群服务支持更灵活的部署和运维操作，
+得益于在Kubernetes集群中使用Antrea的网络支持，DevOps和SRE可以快速、可靠的部署，降低故障率，提升客户使用体验。
+https://glasnostic.com/
 
 # 未来规划
 
@@ -119,3 +119,11 @@ https://github.com/vmware-tanzu/antrea/tree/main/docs
 https://github.com/vmware-tanzu/antrea/blob/main/ROADMAP.md
 
 https://github.com/vmware-tanzu/antrea/blob/main/docs/getting-started.md
+
+https://www.crunchbase.com/organization/glasnostic
+
+https://github.com/glasnostic
+
+https://docs.vmware.com/cn/
+
+http://www.nimbusproject.org/about/

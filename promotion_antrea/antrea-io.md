@@ -27,3 +27,8 @@ Antrea enforces Kubernetes Network Policy API which assigns network traffic filt
 ## Improved Network Performance
 
 OVS performs better than iptables, especially as the number of rules increases. There are numerous efforts in the OVS community to speed up packet IO and packet processing through technologies like Intel DPDK, AF_XDP sockets, hardware offloading, etc.
+
+
+# refs
+
+https://antrea.io
